@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reactive Dog Academy - Mastery Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --blue-600: #2563eb;
+            --purple-600: #9333ea;
+        }
+
+        body {
+            font-family: 'Proxima Nova', 'Montserrat', sans-serif;
+            background-color: #fcfcfd;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--blue-600) 0%, var(--purple-600) 100%);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--blue-600) 0%, var(--purple-600) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .threshold-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            background: var(--blue-600);
+            cursor: pointer;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--blue-600) 0%, var(--purple-600) 100%);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.4);
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(.8);
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .trigger-active::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #ef4444;
+            border-radius: 50%;
+            z-index: -1;
+            animation: pulse-ring 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+    </style>
+</head>
+
+<body class="text-slate-800 antialiased">
+
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-3">
+                    <div class="gradient-bg p-2 rounded-xl shadow-lg">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <span class="font-extrabold text-2xl tracking-tight text-slate-900">Dog<span
+                            class="gradient-text">Sync</span></span>
+                </div>
+                <div class="hidden lg:flex space-x-10">
+                    <a href="#simulator"
+                        class="text-sm font-bold text-slate-600 hover:text-blue-600 transition">Simulator</a>
+                    <a href="#language" class="text-sm font-bold text-slate-600 hover:text-blue-600 transition">Body
+                        Language</a>
+                    <a href="#strategies"
+                        class="text-sm font-bold text-slate-600 hover:text-blue-600 transition">Training</a>
+                </div>
+                <a href="https://spiritdogtraining.com?aff=nitss%4022&p=3191478" target="_blank"
+                    class="btn-primary text-white px-6 py-3 rounded-xl text-sm font-bold shadow-lg whitespace-nowrap">
+                    Tackling Reactivity Bundle
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-16 pb-24 overflow-hidden bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-16">
+            <div class="flex-1 text-center lg:text-left z-10">
+                <div class="inline-flex items-center gap-2 px-4 py-2 mb-8 bg-blue-50 rounded-full">
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
+                    </span>
+                    <span class="text-xs font-bold tracking-widest text-blue-700 uppercase">Expert-Led Training</span>
+                </div>
+                <h1 class="text-5xl lg:text-7xl font-extrabold text-slate-900 leading-[1.1] mb-8">
+                    Master Your Dog's <br><span class="gradient-text">Focus & Calm</span>
+                </h1>
+                <p class="text-xl text-slate-500 mb-10 max-w-xl leading-relaxed font-medium">
+                    Stop the lunging and barking. Our science-backed interactive tools help you understand
+                    <b>thresholds</b> and rebuild your bond.
+                </p>
+                <div class="flex flex-wrap justify-center lg:justify-start gap-5">
+                    <a href="https://spiritdogtraining.com?aff=nitss%4022&p=3191478" target="_blank"
+                        class="btn-primary text-white px-10 py-5 rounded-2xl font-extrabold text-lg shadow-2xl flex items-center gap-3">
+                        Tackling Reactivity Bundle
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                    <a href="#simulator"
+                        class="bg-white text-slate-900 border-2 border-slate-200 px-10 py-5 rounded-2xl font-extrabold text-lg hover:border-blue-600 transition">
+                        Interactive Sim
+                    </a>
+                </div>
+            </div>
+            <div class="flex-1 relative">
+                <div
+                    class="absolute inset-0 bg-gradient-to-tr from-blue-100 to-purple-100 rounded-full filter blur-[80px] opacity-40 -z-10 animate-pulse">
+                </div>
+                <img src="/gen?prompt=happy+german+shepherd+focused+on+owner+in+sunlit+park+cinematic+lighting+pro+photography+shallow+depth+of+field&aspect=4:3"
+                    alt="Focused Calm Dog"
+                    class="rounded-[3rem] shadow-2xl relative z-10 border-[12px] border-white ring-1 ring-slate-100">
+            </div>
+        </div>
+    </section>
+
+    <section id="simulator" class="py-24 bg-slate-950 text-white relative overflow-hidden">
+        <div
+            class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-900/10 to-transparent pointer-events-none">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div
+                class="grid lg:grid-cols-2 gap-20 items-center bg-slate-900/50 backdrop-blur-xl p-8 lg:p-16 rounded-[3rem] border border-slate-800 shadow-2xl">
+
+                <div>
+                    <h2 class="text-4xl font-extrabold mb-6">Interactive <span class="gradient-text">Threshold</span>
+                        Lab</h2>
+                    <p class="text-slate-400 text-lg mb-10">Reactivity happens when a dog is "over threshold." Adjust
+                        the slider to see how distance changes your dog's ability to learn.</p>
+
+                    <div id="status-card" class="p-8 rounded-3xl border transition-all duration-500 bg-slate-800/50">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div id="status-indicator"
+                                class="w-4 h-4 rounded-full bg-green-500 shadow-[0_0_15px_rgba(34,197,94,0.5)]"></div>
+                            <h3 id="status-title" class="text-2xl font-bold">Safe Zone</h3>
+                        </div>
+                        <p id="status-desc" class="text-slate-300 leading-relaxed mb-6">Your dog is under threshold.
+                            They can process treats and look at triggers without reacting.</p>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-slate-900/50 p-4 rounded-2xl border border-slate-700">
+                                <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Heart
+                                    Rate</span>
+                                <div id="hr-sim" class="text-xl font-bold text-green-400">Normal</div>
+                            </div>
+                            <div class="bg-slate-900/50 p-4 rounded-2xl border border-slate-700">
+                                <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Learning
+                                    Ability</span>
+                                <div id="learn-sim" class="text-xl font-bold text-green-400">100%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-12">
+                    <div
+                        class="relative h-64 bg-slate-950 rounded-3xl border border-slate-800 flex items-center justify-between px-10 overflow-hidden">
+                        <div class="flex flex-col items-center gap-3">
+                            <div class="w-16 h-16 rounded-2xl gradient-bg flex items-center justify-center shadow-2xl">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                </svg>
+                            </div>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-blue-400">You + Dog</span>
+                        </div>
+
+                        <div class="flex-1 flex flex-col items-center px-4">
+                            <div id="dist-tag" class="mb-2 text-3xl font-black gradient-text">50m</div>
+                            <div class="w-full h-1 bg-slate-800 rounded-full relative">
+                                <div id="dist-bar"
+                                    class="absolute inset-y-0 left-0 bg-blue-500 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.5)]"
+                                    style="width: 50%;"></div>
+                            </div>
+                        </div>
+
+                        <div id="trigger-box"
+                            class="flex flex-col items-center gap-3 relative transition-transform duration-300">
+                            <div
+                                class="w-16 h-16 rounded-2xl bg-slate-800 flex items-center justify-center border border-slate-700">
+                                <svg class="w-8 h-8 text-slate-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Trigger</span>
+                        </div>
+                    </div>
+
+                    <div class="px-2">
+                        <label class="block text-sm font-bold text-slate-400 uppercase tracking-[0.2em] mb-6">Adjust
+                            Distance to Trigger</label>
+                        <input type="range" id="sim-slider" min="5" max="100" value="50"
+                            class="w-full h-3 bg-slate-800 rounded-lg appearance-none cursor-pointer threshold-slider">
+                        <div class="flex justify-between mt-4 font-bold text-xs text-slate-500">
+                            <span>REACTION ZONE (CRITICAL)</span>
+                            <span>LEARNING ZONE (SAFE)</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="language" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">Decode the <span
+                        class="gradient-text">Signals</span></h2>
+                <p class="text-lg text-slate-600 font-medium leading-relaxed">Early intervention is key. A dog often
+                    speaks through subtle body shifts long before they bark. Understanding these "whispers" prevents the
+                    "shouts."</p>
+            </div>
+
+
+
+            <div class="grid md:grid-cols-3 gap-8 mt-16">
+                <div
+                    class="group p-8 rounded-[2.5rem] border-2 border-slate-50 hover:border-blue-100 bg-white transition-all hover:shadow-2xl hover:shadow-blue-900/5">
+                    <div class="aspect-square overflow-hidden rounded-3xl mb-8">
+                        <img src="/gen?prompt=dog+licking+lips+anxious+expression+shallow+focus+outdoor&aspect=1:1"
+                            alt="Lip Licking"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="inline-block px-4 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-bold mb-4">
+                        Level: Low Stress</div>
+                    <h3 class="text-2xl font-extrabold text-slate-900 mb-3">Displacement Signals</h3>
+                    <p class="text-slate-500 font-medium">Lip licking, yawning when not tired, or "shaking off" as if
+                        wet. These are early requests for space.</p>
+                </div>
+                <div
+                    class="group p-8 rounded-[2.5rem] border-2 border-slate-50 hover:border-purple-100 bg-white transition-all hover:shadow-2xl hover:shadow-purple-900/5">
+                    <div class="aspect-square overflow-hidden rounded-3xl mb-8">
+                        <img src="/gen?prompt=dog+staring+intensely+fixed+gaze+stiff+body+ears+forward&aspect=1:1"
+                            alt="Fixating"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div
+                        class="inline-block px-4 py-1 rounded-full bg-purple-50 text-purple-600 text-xs font-bold mb-4">
+                        Level: Alert</div>
+                    <h3 class="text-2xl font-extrabold text-slate-900 mb-3">The "Lock-On"</h3>
+                    <p class="text-slate-500 font-medium">Stiffening of the body, a fixed stare, and tail held high and
+                        vibrating. The dog is processing a potential threat.</p>
+                </div>
+                <div
+                    class="group p-8 rounded-[2.5rem] border-2 border-slate-50 hover:border-red-100 bg-white transition-all hover:shadow-2xl hover:shadow-red-900/5">
+                    <div class="aspect-square overflow-hidden rounded-3xl mb-8">
+                        <img src="/gen?prompt=dog+lunging+on+leash+barking+aggressive+blur+background&aspect=1:1"
+                            alt="Reactivity"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="inline-block px-4 py-1 rounded-full bg-red-50 text-red-600 text-xs font-bold mb-4">
+                        Level: Reactive</div>
+                    <h3 class="text-2xl font-extrabold text-slate-900 mb-3">System Overload</h3>
+                    <p class="text-slate-500 font-medium">Lunging, barking, and snapping. The dog's brain has switched
+                        to pure survival mode. Learning is impossible here.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="strategies" class="py-24 bg-slate-50 border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-20 items-center">
+                <div class="flex-1">
+                    <h2 class="text-4xl font-extrabold text-slate-900 mb-8 leading-tight">3 Pillars of <span
+                            class="gradient-text">Success</span></h2>
+
+                    <div class="space-y-10">
+                        <div class="flex gap-6">
+                            <div class="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center shrink-0">
+                                <span class="text-2xl font-black text-blue-600">01</span>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Management First</h4>
+                                <p class="text-slate-500 leading-relaxed font-medium">Avoid triggers while training.
+                                    Every reaction strengthens the neural pathway of fear. Close the blinds, take
+                                    different routes, and use high-value treats.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="w-14 h-14 rounded-2xl bg-purple-100 flex items-center justify-center shrink-0">
+                                <span class="text-2xl font-black text-purple-600">02</span>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Counter-Conditioning</h4>
+                                <p class="text-slate-500 leading-relaxed font-medium">Changing the emotional response.
+                                    We want the trigger to predict something wonderful (like prime rib or chicken) so
+                                    the "Scary Thing" becomes a "Good Luck Charm."</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="w-14 h-14 rounded-2xl bg-indigo-100 flex items-center justify-center shrink-0">
+                                <span class="text-2xl font-black text-indigo-600">03</span>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Confidence Building</h4>
+                                <p class="text-slate-500 leading-relaxed font-medium">Use scent games and positive
+                                    reinforcement trick training to build your dog's self-esteem. A confident dog is a
+                                    less reactive dog.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-1 bg-white p-10 rounded-[3rem] shadow-xl border border-slate-100">
+                    <h3 class="text-2xl font-extrabold mb-8">Ready for a Transformation?</h3>
+                    <img src="/gen?prompt=dog+training+kit+treats+harness+clicker+organized+on+wooden+table&aspect=16:9"
+                        alt="Training Kit" class="rounded-2xl mb-8 shadow-inner border border-slate-50">
+                    <p class="text-slate-600 mb-8 font-medium italic">"The best time to start training was yesterday.
+                        The second best time is now. Don't wait for the next walk to be a struggle."</p>
+                    <a href="https://spiritdogtraining.com?aff=nitss%4022&p=3191478" target="_blank"
+                        class="btn-primary text-white w-full py-5 rounded-2xl font-black text-xl flex items-center justify-center gap-3">
+                        Tackling Reactivity Bundle
+                    </a>
+                    <div class="mt-6 flex items-center justify-center gap-4">
+                        <div class="flex -space-x-3">
+                            <div class="w-8 h-8 rounded-full border-2 border-white bg-slate-200 overflow-hidden"><img
+                                    src="/image?query=person+avatar+1" alt="user"></div>
+                            <div class="w-8 h-8 rounded-full border-2 border-white bg-slate-200 overflow-hidden"><img
+                                    src="/image?query=person+avatar+2" alt="user"></div>
+                            <div class="w-8 h-8 rounded-full border-2 border-white bg-slate-200 overflow-hidden"><img
+                                    src="/image?query=person+avatar+3" alt="user"></div>
+                        </div>
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Joined by 12,000+
+                            Owners</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex items-center justify-center gap-3 mb-8">
+                <div class="gradient-bg p-2 rounded-xl">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <span class="font-extrabold text-xl tracking-tight">DogSync</span>
+            </div>
+            <p class="text-slate-500 max-w-md mx-auto mb-10 font-medium">Building a world where every walk is a joy for
+                both ends of the leash.</p>
+            <div class="flex justify-center gap-8 mb-12">
+                <a href="https://spiritdogtraining.com?aff=nitss%4022&p=3191478" target="_blank"
+                    class="text-slate-400 hover:text-white font-bold transition">Reactivity Course</a>
+                <a href="#" class="text-slate-400 hover:text-white font-bold transition">Privacy</a>
+                <a href="#" class="text-slate-400 hover:text-white font-bold transition">Contact</a>
+            </div>
+            <div class="pt-8 border-t border-slate-800 text-[10px] font-bold text-slate-600 uppercase tracking-[0.3em]">
+                &copy; 2026 DOGSYNC INTERACTIVE. ALL RIGHTS RESERVED.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slider = document.getElementById('sim-slider');
+            const distTag = document.getElementById('dist-tag');
+            const distBar = document.getElementById('dist-bar');
+            const triggerBox = document.getElementById('trigger-box');
+            const statusCard = document.getElementById('status-card');
+            const statusIndicator = document.getElementById('status-indicator');
+            const statusTitle = document.getElementById('status-title');
+            const statusDesc = document.getElementById('status-desc');
+            const hrSim = document.getElementById('hr-sim');
+            const learnSim = document.getElementById('learn-sim');
+
+            const zones = {
+                safe: {
+                    min: 60,
+                    title: 'Safe Zone',
+                    desc: 'Your dog is relaxed and can focus on you. This is where <b>Counter-Conditioning</b> happens.',
+                    color: 'text-green-500',
+                    dot: 'bg-green-500 shadow-[0_0_15px_rgba(34,197,94,0.5)]',
+                    border: 'border-green-500/20',
+                    hr: 'Normal',
+                    learn: '100%'
+                },
+                alert: {
+                    min: 25,
+                    title: 'Alert Zone',
+                    desc: 'The "Threshold." Your dog is fixating. They might stop eating treats. Move back <b>NOW</b>.',
+                    color: 'text-amber-500',
+                    dot: 'bg-amber-500 shadow-[0_0_15px_rgba(245,158,11,0.5)]',
+                    border: 'border-amber-500/20',
+                    hr: 'Elevated',
+                    learn: '20%'
+                },
+                danger: {
+                    min: 0,
+                    title: 'Reactive Zone',
+                    desc: 'Over threshold. The brain is flooded with cortisol. Learning has <b>stopped</b> completely.',
+                    color: 'text-red-500',
+                    dot: 'bg-red-500 shadow-[0_0_15px_rgba(239,68,68,0.5)]',
+                    border: 'border-red-500/20',
+                    hr: 'High/Stress',
+                    learn: '0%'
+                }
+            };
+
+            function updateSimulator(val) {
+                distTag.innerText = `${val}m`;
+                distBar.style.width = `${val}%`;
+
+                // Move trigger box
+                const offset = (100 - val) * 0.8;
+                triggerBox.style.transform = `translateX(-${offset}%)`;
+
+                let currentZone;
+                if (val >= zones.safe.min) currentZone = zones.safe;
+                else if (val >= zones.alert.min) currentZone = zones.alert;
+                else currentZone = zones.danger;
+
+                // Update UI
+                statusTitle.innerText = currentZone.title;
+                statusTitle.className = `text-2xl font-bold ${currentZone.color}`;
+                statusDesc.innerHTML = currentZone.desc;
+                statusIndicator.className = `w-4 h-4 rounded-full ${currentZone.dot}`;
+                statusCard.className = `p-8 rounded-3xl border transition-all duration-300 bg-slate-800/50 ${currentZone.border}`;
+                hrSim.innerText = currentZone.hr;
+                hrSim.className = `text-xl font-bold ${currentZone.color}`;
+                learnSim.innerText = currentZone.learn;
+                learnSim.className = `text-xl font-bold ${currentZone.color}`;
+
+                // Pulse effect for danger
+                if (val < 25) {
+                    triggerBox.classList.add('trigger-active');
+                } else {
+                    triggerBox.classList.remove('trigger-active');
+                }
+            }
+
+            slider.addEventListener('input', (e) => updateSimulator(parseInt(e.target.value)));
+            updateSimulator(50);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
