@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bamboo Chronicles: A History of Pandas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .bamboo-gradient {
+            background: linear-gradient(135deg, #1a472a 0%, #2d5a27 100%);
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: #2d5a27;
+            transform: translateX(-50%);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-line::before {
+                left: 20px;
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .tab-active {
+            border-bottom: 3px solid #1a472a;
+            color: #1a472a;
+            font-weight: 700;
+        }
+
+        .anatomy-dot {
+            transition: all 0.3s ease;
+        }
+        
+        .anatomy-dot:hover {
+            transform: scale(1.5);
+            background-color: #facc15;
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800">
+
+    <nav class="fixed top-0 w-full z-50 glass-panel shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-paw text-2xl text-emerald-800"></i>
+                <span class="text-xl font-bold tracking-tight">PandaChronicles</span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-wider">
+                <a href="#origins" class="hover:text-emerald-700 transition">Origins</a>
+                <a href="#discovery" class="hover:text-emerald-700 transition">Discovery</a>
+                <a href="#diplomacy" class="hover:text-emerald-700 transition">Diplomacy</a>
+                <a href="#conservation" class="hover:text-emerald-700 transition">Conservation</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative h-screen flex items-center justify-center overflow-hidden bamboo-gradient">
+        <div class="absolute inset-0 opacity-20">
+            <img src="/gen?prompt=lush+dense+bamboo+forest+misty+morning+cinematic+lighting+high+detail&aspect=16:9" alt="Bamboo Forest" class="w-full h-full object-cover">
+        </div>
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-6xl md:text-8xl font-bold text-white mb-4 drop-shadow-lg">Giant Panda</h1>
+            <p class="text-xl md:text-2xl text-emerald-50 mb-8 max-w-2xl mx-auto">From ancient myths to modern icons of conservation. Explore the history of the world's most beloved bear.</p>
+            <a href="#origins" class="bg-white text-emerald-900 px-8 py-3 rounded-full font-bold shadow-xl hover:bg-emerald-50 transition transform hover:scale-105 inline-block">Begin Journey</a>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </header>
+
+    <section id="origins" class="py-24 max-w-7xl mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-emerald-700 font-bold tracking-widest uppercase text-sm">Prehistory & Evolution</span>
+                <h2 class="text-4xl font-bold mt-2 mb-6 text-stone-900">The Bear Who Chose Bamboo</h2>
+                <p class="text-lg leading-relaxed text-stone-600 mb-6">
+                    Pandas are members of the bear family (*Ursidae*), but they split from other bears roughly **19 to 22 million years ago**. While their ancestors were carnivorous, the Giant Panda evolved to occupy a unique ecological niche: the bamboo forests of central China.
+                </p>
+                <div class="bg-emerald-50 p-6 rounded-2xl border-l-4 border-emerald-600">
+                    <h4 class="font-bold text-emerald-900 mb-2">Did You Know?</h4>
+                    <p class="text-emerald-800 italic text-sm">Fossil evidence suggests the "ancestral" panda (*Ailurarctos*) lived in humid forests and was already beginning to develop the famous "pseudo-thumb" to grip bamboo stems.</p>
+                </div>
+            </div>
+            <div class="relative group">
+                <img src="/gen?prompt=fossil+of+prehistoric+panda+in+rock+scientific+museum+display+lighting&aspect=4:3" alt="Panda Evolution" class="rounded-3xl shadow-2xl transition duration-500 group-hover:scale-[1.02]">
+                <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg max-w-[200px]">
+                    <p class="text-xs font-bold text-stone-400 uppercase mb-1">Taxonomy</p>
+                    <p class="text-sm italic">Ailuropoda melanoleuca</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-stone-100 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-stone-900">Built for Bamboo</h2>
+                <p class="text-stone-600">Hover over the highlights to explore unique evolutionary adaptations.</p>
+            </div>
+            
+            <div class="relative flex flex-col items-center">
+                <div class="relative w-full max-w-3xl">
+                    <img src="/gen?prompt=a+cute+giant+panda+sitting+and+eating+bamboo+white+background+studio+shot+high+resolution&aspect=1:1" alt="Panda Anatomy" class="w-full rounded-full shadow-2xl border-8 border-white">
+                    
+                    <div class="anatomy-dot absolute top-[20%] left-[45%] w-6 h-6 bg-emerald-600 rounded-full border-4 border-white cursor-help group" data-info="Giant pandas have powerful jaw muscles and large molars designed for crushing tough bamboo stalks.">
+                        <div class="hidden group-hover:block absolute top-8 left-1/2 -translate-x-1/2 w-48 bg-white p-3 rounded-lg shadow-xl text-xs z-20">
+                            <strong>Powerful Jaws:</strong> Capable of exerting force comparable to a lion.
+                        </div>
+                    </div>
+                    
+                    <div class="anatomy-dot absolute top-[35%] left-[30%] w-6 h-6 bg-emerald-600 rounded-full border-4 border-white cursor-help group" data-info="The black circles around their eyes may help them recognize each other or signal aggression to competitors.">
+                        <div class="hidden group-hover:block absolute top-8 left-1/2 -translate-x-1/2 w-48 bg-white p-3 rounded-lg shadow-xl text-xs z-20">
+                            <strong>Eye Patches:</strong> Unique markings that act like sunglasses and social signals.
+                        </div>
+                    </div>
+
+                    <div class="anatomy-dot absolute bottom-[40%] left-[25%] w-6 h-6 bg-emerald-600 rounded-full border-4 border-white cursor-help group" data-info="The famous 'sixth finger' is actually an enlarged wrist bone that functions like a thumb.">
+                        <div class="hidden group-hover:block absolute top-8 left-1/2 -translate-x-1/2 w-48 bg-white p-3 rounded-lg shadow-xl text-xs z-20">
+                            <strong>Pseudo-Thumb:</strong> A specialized radial sesamoid bone for gripping bamboo.
+                        </div>
+                    </div>
+
+                    <div class="anatomy-dot absolute bottom-[25%] right-[40%] w-6 h-6 bg-emerald-600 rounded-full border-4 border-white cursor-help group" data-info="Despite being 'bears', 99% of their diet is bamboo. They eat up to 38kg of it daily.">
+                        <div class="hidden group-hover:block absolute top-8 left-1/2 -translate-x-1/2 w-48 bg-white p-3 rounded-lg shadow-xl text-xs z-20">
+                            <strong>Specialized Diet:</strong> A digestive system that remains remarkably carnivore-like despite the herbivorous diet.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="discovery" class="py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16">Historical Milestones</h2>
+            
+            <div class="relative timeline-line">
+                <div class="mb-16 flex flex-col md:flex-row items-center justify-between w-full">
+                    <div class="md:w-5/12 order-2 md:order-1 text-center md:text-right">
+                        <h3 class="text-2xl font-bold text-emerald-800">1869</h3>
+                        <p class="text-lg font-bold mb-2">Western Discovery</p>
+                        <p class="text-stone-600">French missionary Armand David becomes the first European to describe the giant panda after receiving a skin from a local hunter in Sichuan.</p>
+                    </div>
+                    <div class="relative z-10 w-12 h-12 bg-emerald-900 rounded-full border-4 border-white flex items-center justify-center text-white mb-4 md:mb-0">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="md:w-5/12 order-3">
+                        <img src="/image?query=Armand+David+missionary+panda+drawing" alt="Historical Drawing" class="rounded-xl shadow-md w-full h-40 object-cover">
+                    </div>
+                </div>
+
+                <div class="mb-16 flex flex-col md:flex-row items-center justify-between w-full">
+                    <div class="md:w-5/12 order-3 md:order-1">
+                        <img src="/image?query=Su+Lin+panda+1936+Ruth+Harkness" alt="Su Lin Panda" class="rounded-xl shadow-md w-full h-40 object-cover">
+                    </div>
+                    <div class="relative z-10 w-12 h-12 bg-emerald-700 rounded-full border-4 border-white flex items-center justify-center text-white mb-4 md:mb-0">
+                        <i class="fas fa-ship"></i>
+                    </div>
+                    <div class="md:w-5/12 order-2 text-center md:text-left">
+                        <h3 class="text-2xl font-bold text-emerald-800">1936</h3>
+                        <p class="text-lg font-bold mb-2">The First Live Panda Abroad</p>
+                        <p class="text-stone-600">Ruth Harkness brings Su Lin, a panda cub, to the United States, sparking "Pandamania" across the West.</p>
+                    </div>
+                </div>
+
+                <div class="mb-16 flex flex-col md:flex-row items-center justify-between w-full">
+                    <div class="md:w-5/12 order-2 md:order-1 text-center md:text-right">
+                        <h3 class="text-2xl font-bold text-emerald-800">1961</h3>
+                        <p class="text-lg font-bold mb-2">A Global Icon</p>
+                        <p class="text-stone-600">The World Wildlife Fund (WWF) is founded and chooses the Giant Panda (Chi-Chi) as its logo, making it the face of global conservation.</p>
+                    </div>
+                    <div class="relative z-10 w-12 h-12 bg-black rounded-full border-4 border-white flex items-center justify-center text-white mb-4 md:mb-0">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="md:w-5/12 order-3">
+                        <img src="/image?query=WWF+logo+panda+evolution" alt="WWF Panda Logo" class="rounded-xl shadow-md w-full h-40 object-cover">
+                    </div>
+                </div>
+
+                <div id="diplomacy" class="mb-16 flex flex-col md:flex-row items-center justify-between w-full">
+                    <div class="md:w-5/12 order-3 md:order-1">
+                        <img src="/image?query=Nixon+visit+China+panda+Ling+Ling+Hsing+Hsing" alt="Panda Diplomacy" class="rounded-xl shadow-md w-full h-40 object-cover">
+                    </div>
+                    <div class="relative z-10 w-12 h-12 bg-emerald-600 rounded-full border-4 border-white flex items-center justify-center text-white mb-4 md:mb-0">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <div class="md:w-5/12 order-2 text-center md:text-left">
+                        <h3 class="text-2xl font-bold text-emerald-800">1972</h3>
+                        <p class="text-lg font-bold mb-2">Panda Diplomacy</p>
+                        <p class="text-stone-600">Following Richard Nixon's historic visit to China, Ling-Ling and Hsing-Hsing are gifted to the US National Zoo, cementing the "Panda Diplomacy" era.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-emerald-950 text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-4xl font-bold">The Global Ambassadors</h2>
+                    <p class="text-emerald-300 mt-2">Where can you find pandas today? (Outside of China)</p>
+                </div>
+                <div class="mt-4 md:mt-0 flex space-x-2">
+                    <button onclick="filterPandas('all')" class="px-4 py-2 rounded bg-emerald-800 hover:bg-emerald-700 active-filter">All</button>
+                    <button onclick="filterPandas('Americas')" class="px-4 py-2 rounded bg-emerald-900 hover:bg-emerald-700">Americas</button>
+                    <button onclick="filterPandas('Europe')" class="px-4 py-2 rounded bg-emerald-900 hover:bg-emerald-700">Europe</button>
+                    <button onclick="filterPandas('Asia')" class="px-4 py-2 rounded bg-emerald-900 hover:bg-emerald-700">Asia</button>
+                </div>
+            </div>
+
+            <div id="panda-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                </div>
+        </div>
+    </section>
+
+    <section id="conservation" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-emerald-50 p-6 rounded-3xl text-center">
+                            <p class="text-4xl font-bold text-emerald-800">1,864</p>
+                            <p class="text-sm text-emerald-600 font-semibold uppercase">Wild Population</p>
+                        </div>
+                        <div class="bg-blue-50 p-6 rounded-3xl text-center">
+                            <p class="text-4xl font-bold text-blue-800">600+</p>
+                            <p class="text-sm text-blue-600 font-semibold uppercase">In Captivity</p>
+                        </div>
+                        <div class="bg-orange-50 p-6 rounded-3xl text-center col-span-2">
+                            <p class="text-2xl font-bold text-orange-800">Vulnerable</p>
+                            <p class="text-sm text-orange-600 font-semibold uppercase">IUCN Status (since 2016)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <h2 class="text-4xl font-bold mb-6">A Conservation Success Story</h2>
+                    <p class="text-stone-600 leading-relaxed mb-6">
+                        For decades, the Giant Panda was the poster child for extinction. However, intensive habitat restoration, the creation of nature reserves, and strict anti-poaching laws in China have paid off. 
+                    </p>
+                    <p class="text-stone-600 leading-relaxed mb-8">
+                        In **2016**, the IUCN officially downgraded the Giant Panda from "Endangered" to **"Vulnerable"**. While they are still at risk, their numbers are steadily climbing for the first time in centuries.
+                    </p>
+                    <div class="relative pt-1">
+                        <div class="flex mb-2 items-center justify-between">
+                            <div>
+                                <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-emerald-600 bg-emerald-200">
+                                    Recovery Progress
+                                </span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-xs font-semibold inline-block text-emerald-600">
+                                    Steady Growth
+                                </span>
+                            </div>
+                        </div>
+                        <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-emerald-200">
+                            <div style="width:75%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-emerald-500"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-12">The "Other" Panda</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-3xl shadow-xl">
+                    <img src="/gen?prompt=giant+panda+portrait+clear+features&aspect=1:1" alt="Giant Panda" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-stone-200">
+                    <h3 class="text-2xl font-bold mb-2">Giant Panda</h3>
+                    <p class="text-sm text-stone-500 italic mb-4">Ailuropoda melanoleuca</p>
+                    <ul class="text-left space-y-2 text-stone-600">
+                        <li><i class="fas fa-check text-emerald-500 mr-2"></i> Family: Ursidae (Bears)</li>
+                        <li><i class="fas fa-check text-emerald-500 mr-2"></i> Size: 220-330 lbs</li>
+                        <li><i class="fas fa-check text-emerald-500 mr-2"></i> Found: Central China Highlands</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-xl">
+                    <img src="/image?query=red+panda+face+close+up" alt="Red Panda" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-stone-200">
+                    <h3 class="text-2xl font-bold mb-2">Red Panda</h3>
+                    <p class="text-sm text-stone-500 italic mb-4">Ailurus fulgens</p>
+                    <ul class="text-left space-y-2 text-stone-600">
+                        <li><i class="fas fa-check text-orange-500 mr-2"></i> Family: Ailuridae (Unique)</li>
+                        <li><i class="fas fa-check text-orange-500 mr-2"></i> Size: 8-17 lbs (Cat-sized)</li>
+                        <li><i class="fas fa-check text-orange-500 mr-2"></i> Found: Himalayas & China</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="mt-12 text-stone-500 max-w-2xl mx-auto italic">
+                *Despite the name, they are not closely related. The Red Panda is more closely related to raccoons and weasels, while the Giant Panda is a true bear.*
+            </p>
+        </div>
+    </section>
+
+    <footer class="bg-stone-900 text-stone-400 py-12 px-4">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
+            <div>
+                <div class="flex items-center space-x-2 text-white mb-6">
+                    <i class="fas fa-paw text-2xl"></i>
+                    <span class="text-xl font-bold tracking-tight">PandaChronicles</span>
+                </div>
+                <p class="text-sm leading-relaxed">
+                    Dedicated to the preservation and education of the Giant Panda through digital storytelling and factual data.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6">Quick Links</h4>
+                <ul class="space-y-4 text-sm">
+                    <li><a href="#origins" class="hover:text-emerald-400 transition">Evolutionary History</a></li>
+                    <li><a href="#discovery" class="hover:text-emerald-400 transition">Western Discovery</a></li>
+                    <li><a href="#diplomacy" class="hover:text-emerald-400 transition">Panda Diplomacy</a></li>
+                    <li><a href="#conservation" class="hover:text-emerald-400 transition">Current Status</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6">Support Conservation</h4>
+                <p class="text-sm mb-4">Want to help protect pandas? Support these organizations:</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-stone-800 px-3 py-1 rounded text-xs border border-stone-700">WWF</span>
+                    <span class="bg-stone-800 px-3 py-1 rounded text-xs border border-stone-700">Pandas International</span>
+                    <span class="bg-stone-800 px-3 py-1 rounded text-xs border border-stone-700">Chengdu Base</span>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-12 pt-12 border-t border-stone-800 text-center text-xs">
+            <p>&copy; 2026 Interactive Panda Explorer. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const pandaZoos = [
+            { name: "Smithsonian National Zoo", location: "USA", region: "Americas", desc: "Home to the famous panda family (until recently returned)." },
+            { name: "Zoo Atlanta", location: "USA", region: "Americas", desc: "Known for their successful breeding program and twin births." },
+            { name: "Everland Resort", location: "South Korea", region: "Asia", desc: "Home to Fu Bao, a social media superstar panda cub." },
+            { name: "Pairi Daiza", location: "Belgium", region: "Europe", desc: "Massive panda exhibit featuring five resident pandas." },
+            { name: "Tiergarten Schönbrunn", location: "Austria", region: "Europe", desc: "The oldest zoo in the world, hosting pandas for decades." },
+            { name: "Ueno Zoo", location: "Japan", region: "Asia", desc: "The most popular panda destination in Japan." },
+            { name: "River Wonders", location: "Singapore", region: "Asia", desc: "Kai Kai and Jia Jia live in a climate-controlled forest." },
+            { name: "Adelaide Zoo", location: "Australia", region: "Asia", desc: "The only giant pandas in the Southern Hemisphere." }
+        ];
+
+        function renderPandas(filter = 'all') {
+            const grid = document.getElementById('panda-grid');
+            grid.innerHTML = '';
+            
+            const filtered = filter === 'all' 
+                ? pandaZoos 
+                : pandaZoos.filter(p => p.region === filter);
+
+            filtered.forEach(p => {
+                const card = document.createElement('div');
+                card.className = 'bg-emerald-900/50 p-6 rounded-2xl border border-emerald-800 hover:bg-emerald-800 transition transform hover:-translate-y-1';
+                card.innerHTML = `
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-bold text-emerald-400 uppercase tracking-tighter">${p.region}</span>
+                        <i class="fas fa-map-marker-alt text-emerald-500"></i>
+                    </div>
+                    <h4 class="text-lg font-bold mb-1">${p.name}</h4>
+                    <p class="text-sm text-emerald-300 mb-3">${p.location}</p>
+                    <p class="text-xs text-stone-300 leading-relaxed">${p.desc}</p>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterPandas(region) {
+            // Update button styles
+            document.querySelectorAll('button').forEach(btn => {
+                btn.classList.remove('bg-emerald-700', 'active-filter');
+                btn.classList.add('bg-emerald-900');
+            });
+            event.currentTarget.classList.remove('bg-emerald-900');
+            event.currentTarget.classList.add('bg-emerald-700', 'active-filter');
+            
+            renderPandas(region);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderPandas();
+
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('transition', 'duration-1000', 'opacity-0', 'translate-y-10');
+                observer.observe(section);
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
